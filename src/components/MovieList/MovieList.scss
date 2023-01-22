@@ -1,0 +1,10 @@
+.banner {
+    img {
+        height: calc(100vh - 80px);
+        width: 100%;
+    }
+}
+
+.movie:hover {
+    transform: scale(1.2);
+} 

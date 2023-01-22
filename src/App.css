@@ -1,0 +1,12 @@
+.text-overlay {
+    position: absolute;
+    bottom: 0px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.text-overlay span{
+    color: white;
+    font-size: 40px;
+    font-weight: 800;
+}

@@ -1,0 +1,32 @@
+.movieDetails {
+    // .poster {
+    //     img {
+    //         height: calc(100vh - 80px);
+    //         width: 100%;
+    //     }
+    // }
+}
+.similar-movies {
+    .owl-theme .owl-nav {
+        .owl-prev {
+            position: absolute;
+            left: 0px;
+            top: 50px;
+
+            span {
+                font-size: 70px;
+                color: red;
+            }
+        }
+        .owl-next {
+            position: absolute;
+            right: 0px;
+            top: 50px;
+
+            span {
+                font-size: 70px;
+                color: red;
+            }
+        }
+    }
+}
