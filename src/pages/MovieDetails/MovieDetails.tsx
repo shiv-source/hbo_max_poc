@@ -44,11 +44,7 @@ function MovieDetailsComponent() {
             <div className="movieDetails">
                 <div className="poster">
                     <img
-                        src={
-                            movie?.backdrop_path
-                                ? getMovieImageUrl(movie?.backdrop_path, TmdbImageWidth.WIDTH_1280)
-                                : ""
-                        }
+                        src={movie?.backdrop_path && getMovieImageUrl(movie?.backdrop_path, TmdbImageWidth.WIDTH_1280)}
                         alt={movie?.title}
                     />
                     <div className="text-overlay">
