@@ -52,16 +52,16 @@ function MovieDetailsComponent() {
                     </div>
                 </div>
                 <div className="info">
-                    <div className="description">
-                        <h2>Overview</h2>
+                    <div className="description mt-3">
+                        <h3>Overview</h3>
                         <p>{movie?.overview}</p>
                     </div>
-                    <div className="status">
-                        <h2>Status</h2>
+                    <div className="status  mt-3">
+                        <h3>Status</h3>
                         <p>{movie?.status}</p>
                     </div>
-                    <div className="budget">
-                        <h2>Budget</h2>
+                    <div className="budget  mt-3">
+                        <h3>Budget</h3>
                         <p>{movie?.budget}</p>
                     </div>
                 </div>

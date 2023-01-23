@@ -23,7 +23,7 @@ export const MovieListComponent: React.FC<{
             );
         } else {
             return (
-                <div className="movie p-2" key={movie.id} onClick={() => handleMovieClick && handleMovieClick(movie)}>
+                <div className="movie" key={movie.id} onClick={() => handleMovieClick && handleMovieClick(movie)}>
                     <img src={getMovieImageUrl(movie.poster_path, width)} />
                 </div>
             );

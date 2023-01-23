@@ -59,7 +59,7 @@ function HomeComponent() {
                     autoplayTimeout={3000}
                     margin={10}
                 >
-                    {<MovieListComponent data={popularMovie?.results} isBanner={true} />}
+                    {<MovieListComponent data={popularMovie?.results} isBanner={true} handleMovieClick={handleMovieClick}/>}
                 </OwlCarousel>
             </div>
             <div className="categories">

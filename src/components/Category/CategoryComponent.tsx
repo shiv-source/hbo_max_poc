@@ -1,5 +1,4 @@
 import React from "react";
-import './CategoryComponent.scss';
 import OwlCarousel from "react-owl-carousel";
 import { Movie } from "../../interfaces/Movie";
 import { MovieListComponent } from "../MovieList/MovieList";
@@ -11,9 +10,9 @@ export const CategoryComponent: React.FC<{ categoryName: string; data: Array<Mov
 }) => {
     if (data?.length) {
         return (
-            <div className={categoryName}>
-                <div className="title">{categoryName}</div>
-                <div className="crousel">
+            <div className="movie-category pt-5">
+                <div className="title"><h4>{categoryName}</h4></div>
+                <div className="crousel mt-3">
                     <OwlCarousel
                         items={8}
                         className="owl-theme"

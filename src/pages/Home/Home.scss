@@ -1,25 +1,58 @@
-.categories {
-    .owl-theme .owl-nav {
-        .owl-prev {
-            position: absolute;
-            left: 0px;
-            top: 50px;
+.home {
+    .featured-movies {
+        padding-top: 70px;
+        img {
+            height: calc(100vh - 70px);
+            width: 100%;
+        }
 
-            span {
-                font-size: 70px;
-                color: red;
+        .owl-theme .owl-nav {
+            .owl-prev {
+                position: absolute;
+                left: 0px;
+                top: 180px;
+
+                span {
+                    font-size: 70px;
+                    color: red;
+                }
+            }
+            .owl-next {
+                position: absolute;
+                right: 0px;
+                top: 180px;
+
+                span {
+                    font-size: 70px;
+                    color: red;
+                }
             }
         }
-        .owl-next {
-            position: absolute;
-            right: 0px;
-            top: 50px;
+    }
 
-            span {
-                font-size: 70px;
-                color: red;
+    .categories {
+        padding: 10px;
+        .owl-theme .owl-nav {
+            .owl-prev {
+                position: absolute;
+                left: 0px;
+                top: 50px;
+
+                span {
+                    font-size: 70px;
+                    color: red;
+                }
+            }
+            .owl-next {
+                position: absolute;
+                right: 0px;
+                top: 50px;
+
+                span {
+                    font-size: 70px;
+                    color: red;
+                }
             }
         }
     }
 }
-

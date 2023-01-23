@@ -7,7 +7,6 @@ export const HeaderComponent = () => {
             <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to={"/"}>
-                        {/* <img src="https://www.hbo.com/img/hbomaxoriginal.svg" style={{fill: "white"}} /> */}
                         <span>HBO Max</span>
                     </Link>
                     <button
