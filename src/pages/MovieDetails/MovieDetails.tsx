@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import './MovieDetails.scss';
-import { useParams } from "react-router-dom";
+import "./MovieDetails.scss";
+import { useNavigate, useParams } from "react-router-dom";
 import { getMovieImageUrl, getMovies, TmdbImageWidth } from "../../api/api";
 import { CategoryComponent } from "../../components/Category/CategoryComponent";
 import { ApiResponse } from "../../interfaces/ApiResponse";
@@ -10,6 +10,7 @@ function MovieDetailsComponent() {
     const [movie, setMovie] = useState<MovieDetails>();
     const [similarMovie, setSimilarMovie] = useState<ApiResponse<Movie[]>>();
     const params = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (params?.id) {
@@ -30,6 +31,14 @@ function MovieDetailsComponent() {
         setSimilarMovie(response);
     };
 
+    const handleMovieClick = (movie: Movie) => {
+        if (movie) {
+            navigate(`/movie/${movie.id}`);
+            getMovieDetails(`${movie.id}`);
+            getSimilarMovies(`${movie.id}`);
+        }
+    };
+
     return (
         <React.Fragment>
             <div className="movieDetails">
@@ -42,7 +51,9 @@ function MovieDetailsComponent() {
                         }
                         alt={movie?.title}
                     />
-                    <div className="text-overlay"><span>{movie?.title}</span></div>
+                    <div className="text-overlay">
+                        <span>{movie?.title}</span>
+                    </div>
                 </div>
                 <div className="info">
                     <div className="description">
@@ -60,10 +71,14 @@ function MovieDetailsComponent() {
                 </div>
             </div>
             <div className="similar-movies">
-                <CategoryComponent data={similarMovie?.results} categoryName="Similar Movies" />
+                <CategoryComponent
+                    data={similarMovie?.results}
+                    categoryName="Similar Movies"
+                    handleMovieClick={handleMovieClick}
+                />
             </div>
         </React.Fragment>
     );
 }
-//https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=<<api_key>>&language=en-US&page=1
+
 export default MovieDetailsComponent;

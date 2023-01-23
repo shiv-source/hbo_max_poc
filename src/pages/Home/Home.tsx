@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
-import './Home.scss';
+import "./Home.scss";
 import OwlCarousel from "react-owl-carousel";
 import { getMovies } from "../../api/api";
 import { CategoryComponent } from "../../components/Category/CategoryComponent";
 import { MovieListComponent } from "../../components/MovieList/MovieList";
 import { ApiResponse } from "../../interfaces/ApiResponse";
 import { Movie } from "../../interfaces/Movie";
-
+import { useNavigate } from "react-router-dom";
 
 function HomeComponent() {
     const [popularMovie, setPopularMovie] = useState<ApiResponse<Movie[]>>();
     const [upcomingMovie, setUpcomingMovie] = useState<ApiResponse<Movie[]>>();
     const [topRatedMovie, setTopRatedMovie] = useState<ApiResponse<Movie[]>>();
+    const navigate = useNavigate();
 
     useEffect(() => {
         getPopularMovies();
@@ -37,9 +38,9 @@ function HomeComponent() {
         setTopRatedMovie(response);
     };
 
-    const renderUpcomingMovie = () => {
-        if (upcomingMovie?.results.length) {
-            return <div className="title">UpComing Movies</div>;
+    const handleMovieClick = (movie: Movie) => {
+        if (movie) {
+            navigate(`/movie/${movie.id}`);
         }
     };
 
@@ -62,9 +63,21 @@ function HomeComponent() {
                 </OwlCarousel>
             </div>
             <div className="categories">
-                <CategoryComponent data={popularMovie?.results} categoryName="Popular Movies" />
-                <CategoryComponent data={upcomingMovie?.results} categoryName="Upcoming Movies" />
-                <CategoryComponent data={topRatedMovie?.results} categoryName="Top Rated Movies" />
+                <CategoryComponent
+                    data={popularMovie?.results}
+                    categoryName="Popular Movies"
+                    handleMovieClick={handleMovieClick}
+                />
+                <CategoryComponent
+                    data={upcomingMovie?.results}
+                    categoryName="Upcoming Movies"
+                    handleMovieClick={handleMovieClick}
+                />
+                <CategoryComponent
+                    data={topRatedMovie?.results}
+                    categoryName="Top Rated Movies"
+                    handleMovieClick={handleMovieClick}
+                />
             </div>
         </div>
     );

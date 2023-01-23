@@ -4,9 +4,10 @@ import OwlCarousel from "react-owl-carousel";
 import { Movie } from "../../interfaces/Movie";
 import { MovieListComponent } from "../MovieList/MovieList";
 
-export const CategoryComponent: React.FC<{ categoryName: string; data: Array<Movie> | undefined }> = ({
+export const CategoryComponent: React.FC<{ categoryName: string; data: Array<Movie> | undefined; handleMovieClick?:Function}> = ({
     categoryName,
     data,
+    handleMovieClick
 }) => {
     if (data?.length) {
         return (
@@ -23,7 +24,7 @@ export const CategoryComponent: React.FC<{ categoryName: string; data: Array<Mov
                         loop={true}
                         mouseDrag={false}
                     >
-                        {<MovieListComponent data={data} />}
+                        {<MovieListComponent data={data} handleMovieClick={handleMovieClick}/>}
                     </OwlCarousel>
                 </div>
             </div>
