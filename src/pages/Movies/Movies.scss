@@ -1,0 +1,21 @@
+// .filter {
+//     padding-top: 80px;
+// }
+
+.movies-page {
+    padding-top: 70px;
+    display: flex;
+
+    .filter {
+        width: 150px;
+        height: calc(100vh - 70px);
+        margin: 0 10px 0 0;
+        padding: 15px;
+        border-right: 1px solid #eee;
+        color: white;
+
+        .form-check {
+            padding-top: 20px;
+        }
+    }
+}

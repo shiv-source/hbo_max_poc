@@ -15,7 +15,7 @@ export const MovieListComponent: React.FC<{
         if (isBanner) {
             return (
                 <div className="banner" key={movie.id} onClick={() => handleMovieClick && handleMovieClick(movie)}>
-                    <img src={getMovieImageUrl(movie.backdrop_path, width)} />
+                    <img src={getMovieImageUrl(movie.backdrop_path, width)} alt={movie.title}/>
                     <div className="text-overlay">
                         <span>{movie?.title}</span>
                     </div>
@@ -24,7 +24,7 @@ export const MovieListComponent: React.FC<{
         } else {
             return (
                 <div className="movie" key={movie.id} onClick={() => handleMovieClick && handleMovieClick(movie)}>
-                    <img src={getMovieImageUrl(movie.poster_path, width)} />
+                    <img src={getMovieImageUrl(movie.poster_path, width)} alt={movie.title}/>
                 </div>
             );
         }
